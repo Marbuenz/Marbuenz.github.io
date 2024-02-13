@@ -49,10 +49,9 @@ $(document).ready(function () {
 ml("account", "736768");
 
 window.onload = function () {
-  if (localStorage.getItem("visited")) {
-    localStorage.removeItem("visited");
-    window.location.href = "index.html";
+  if (!sessionStorage.getItem("visited")) {
+    sessionStorage.setItem("visited", "true");
   } else {
-    localStorage.setItem("visited", "true");
+    window.location.href = "index.html";
   }
 };
