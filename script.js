@@ -49,9 +49,7 @@ $(document).ready(function () {
 ml("account", "736768");
 
 window.onload = function () {
-  if (!sessionStorage.getItem("visited")) {
-    sessionStorage.setItem("visited", "true");
-  } else {
+  if (performance.getEntriesByType("navigation")[0].type === "reload") {
     window.location.href = "index.html";
   }
 };
